@@ -1,0 +1,81 @@
+<!--
+    Author: Janiya Richardson
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Janiya Richardson</title>
+        <link rel="stylesheet" type = "text/css" href = "style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href=
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <script src = "script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">/Home</a></li>
+                <li><a href="projects.html">/Projects</a></li>
+                <li><a href="about.html">/About</a></li>
+            </ul>
+        </nav>
+        <div class="icon">
+            <img id = "gear1" src = "gear 1.png">
+            <img id = "gear2" src = "gear 2.png">
+        </div>
+        <div class="home fadeIn"  id="home">
+            <h2 id="welcome"></h2>
+            <h3 class = "fadeIn" id="spelmanIntro">
+                I'm a third-year computer science and computer engineering major participating in the dual degree engineering program at Spelman College and Georgia Tech.
+ While majoring in computer engineering at Georgia Tech, I am pursuing a concentration in distributed systems and signal processing.
+ As a computer engineering major with a strong passion for assistive technology, I am committed to using my skills to enhance accessibility and improve the quality of life for individuals with disabilities.
+                <br>
+                <br>
+                Please take a moment and explore my website!
+            </h3>
+            <hr>
+        </div>
+        <!--Featured Projects Section-->
+        <div class="featProjects">
+            <h2 id="featuredProjects" >
+                Featured Projects
+            </h2>
+            <div class="wrapper">
+                <i id="left" class="fa-solid  fas fa-angle-left"></i>
+                <ul class="carousel">
+                    <li class="card">
+                        <div class="img"><img src=
+        "JRichardson_Research Poster.png" 
+                                              alt="" draggable="false"> </div>
+                        <h2 style="color: white; font-weight:bold;">Structural Engineering of (Bi/Mn) Double Perovskites </h2>
+                        <button class="moreButton"><a href="projects\bimn.html">See More</a></button>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src=
+        "themebasedAI.png" 
+                                              alt="" draggable="false"> </div>
+                        <h2 style="color: white; font-weight:bold;">
+                            Exploring Textual Relationships: A Deep Learning Approach
+                          </h2>
+                        <button class="moreButton"><a href="projects\theme.html">See More</a></button>
+                    </li>
+                    
+                    <li class="card">
+                        <div class="img"><img src=
+        "systemengineering.png" 
+                                              alt="" draggable="false"> </div>
+                        <h2 style="color: white; font-weight:bold;">Self-Guided Tour Experience</h2>
+                        <button class="moreButton"><a href="projects\systems.html">See More</a></button>
+                    </li>
+                </ul>
+                <i id="right" class="fa-solid fas fa-angle-right"></i>
+            </div>
+        </div>
+    </body>
+</html>

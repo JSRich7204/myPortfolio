@@ -1,0 +1,590 @@
+/* General Styles */
+body {
+    background-color: #522959;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Home Page */
+.fadeIn {
+    animation: fadeInAnimation ease 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h2, h3 {
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    max-width: 90%; /* Ensure text fits within the screen */
+}
+
+#welcome {
+    top: 100px;
+    position: relative;
+    font-size: 2rem; /* Use relative font size */
+    margin: 20px auto;
+    text-align: center;
+    width: 90%; /* Ensure it fits within the screen */
+    font-family: monospace;
+}
+
+#spelmanIntro {
+    top: 100px;
+    position: relative;
+    font-size: 1.5rem; /* Use relative font size */
+    line-height: 1.5;
+    padding: 10px;
+    text-align: justify;
+    width: 90%; /* Ensure it fits within the screen */
+    margin: 20px auto;
+    font-family: monospace;
+}
+
+#gear1, #gear2 {
+    top: 100px;
+    position: relative;
+    width: 150px; /* Adjust size for smaller screens */
+    height: 150px;
+    margin: 20px auto; /* Center the gears */
+    display: block;
+    animation: gear-rotate 5s both infinite;
+}
+
+@keyframes gear-rotate {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+hr {
+    position: relative;
+    color: white;
+    width: 90%; /* Ensure it fits within the screen */
+    margin: 20px auto; /* Center the line */
+    top: 100px;
+}
+
+/* Featured Projects Section */
+#featuredProjects {
+    position: relative;
+    font-size: 2rem; /* Use relative font size */
+    width: 90%; /* Ensure it fits within the screen */
+    margin: 25px auto;
+    font-family: monospace;
+    color: white;
+    text-align: center;
+    top: 100px;
+}
+
+/* Navigation Menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #180018;
+    padding: 10px 20px;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Design for Small Screens */
+@media screen and (max-width: 600px) {
+    #gear1, #gear2 {
+        width: 100px; /* Smaller size for gears */
+        height: 100px;
+    }
+
+    #welcome {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    #spelmanIntro {
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    #featuredProjects {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #180018;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    top: 100px;
+
+}
+
+.wrapper i {
+    height: 50px;
+    width: 50px;
+    background:  #dd666f;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25 rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+
+}
+
+.wrapper i:first-child {
+    left: -22px;
+
+}
+
+.wrapper i:last-child {
+    right: -22px;
+
+}
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: 340px;
+    list-style: none;
+    background: #321937;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    width: 98%;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card .img {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+
+}
+
+.card .img img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.card h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 30px 0 5px;
+    font-family: monospace;
+}
+
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+
+    }
+}
+
+.moreButton{
+    background-color: #dd666f;
+    border: none;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.moreButton a {
+    color: black;
+    text-decoration: none;
+    font-size: 1 rem;
+    font-family: monospace;
+}
+
+/*About Page*/
+.pic {
+    text-align: center; /* Center the image horizontally */
+    margin-top: 20px; /* Add some space at the top */
+}
+
+#aboutPic {
+    width: 300px; /* Set a reasonable width */
+    height: 300px; /* Set a reasonable height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    border: 3px solid #fff; /* Optional: Add a border for styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #321937;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+    color: white;
+    font-family: monospace;
+}
+
+section p, section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#career-goals {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #321937;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#career-goals h2 {
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    background-color: #522959;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.timeline-item h3 {
+    font-size: 1.2rem;
+    color: #dd666f;
+    font-family: monospace;
+    text-align: center;
+}
+
+.timeline-item li {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#resume iframe {
+    border: none; /* Removes the default border around the iframe */
+    margin-top: 20px; /* Adds spacing between the heading and the iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better aesthetics */
+}
+
+.courses {
+    font-size: 1.2rem; /* Make the "Relevant Coursework" heading larger */
+    font-weight: bold; /* Optional: Make it bold for emphasis */
+    margin-bottom: 10px; /* Add some spacing below */
+    font-family: monospace;
+}
+
+.courses li {
+    font-size: 1rem; /* Keep the individual bullet points smaller */
+    font-weight: normal; /* Ensure they are not bold */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.school{
+    font-size:1.7 rem;
+    font-weight: bold;
+    margin-bottom: 10px; /* Add some spacing below */
+    font-family: monospace;
+}
+/*Projects Page*/
+.title {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-top: 20px;
+    font-family: monospace;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Float columns side by side */
+  .column {
+    float: left;
+    width: 33%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .projectCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    background-color: #321937;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  /*Individual Projects*/
+  * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Slides */
+.mySlides {
+    display: none;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Iframe styling */
+.mySlides iframe {
+    width: 100%;
+    height: 600px; /* Adjust height for better visibility */
+    border: none;
+    border-radius: 8px;
+}
+
+
+/* Caption text */
+.text {
+    color: #333;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Number text (e.g., 1 / 4) */
+.numbertext {
+    color: #333;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Responsive iframe for smaller screens */
+@media screen and (max-width: 768px) {
+    .mySlides iframe {
+        height: 400px; /* Reduce height for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mySlides iframe {
+        height: 300px; /* Further reduce height for very small screens */
+    }
+}
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+.projectDetails iframe{
+    width: 100%;
+    height: 600px; /* Adjust height for better visibility */
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px; /* Add some space above the iframe */
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enhancing Mobility/title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <script src="../script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">/Home</a></li>
+                <li><a href="../projects.html">/Projects</a></li>
+                <li><a href="../about.html">/About</a></li>
+            </ul>
+        </nav>
+        <section class="projectDetails">
+            <section id="iframeCarousel">
+                <h2>From This Project</h2>
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+        
+                    <!-- Full-width slides with number and caption text -->
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 4</div>
+                        <iframe src="../REU/Gate Review 1_JRichardson.pdf" title="Gate Review 1"></iframe>
+                        <div class="text">Gate Review 1</div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 4</div>
+                        <iframe src="../REU/JRichardson_Research Poster.pdf" title="Research Poster"></iframe>
+                        <div class="text">Research Poster</div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 4</div>
+                        <iframe src="../REU/JRichardson_Gate Review 2.pdf" title="Gate Review 2"></iframe>
+                        <div class="text">Gate Review 2</div>
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 4</div>
+                        <iframe src="../REU/JRichardson_Business Pitch.pdf" title="Business Pitch"></iframe>
+                        <div class="text">Business Pitch</div>
+                    </div>
+        
+                    <!-- Navigation buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+        
+                <!-- Dots/circles for navigation -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </section>
+        </section>
+        <br>
+        <section>           
+            <h2>Enhancing Mobility: Building a Smart Cane</h2>
+            <p>
+                This project focuses on designing and developing a smart cane to assist individuals with mobility challenges
+            </p>
+            <p>
+                By integrating sensors and microcontrollers such as the Arduino Uno and an ultrasonic sensor, the cane provides real-time feedback to enhance navigation and safety through object detection. 
+                The project emphasizes innovation in assistive technology, aiming to improve the quality of life for users through intelligent design and functionality.
+                Additionally, this project is ongoing as I plan to implement object recognition through smart glasses, further enhancing the assistive capabilities of the system. Along with smart glasses, I also want to try implementing a mobile app that can be used to track the cane's location and provide additional features for the user.
+                <br>
+                With this project, I learned how to work with sensors and microcontrollers, as well as how to design a product that is user-friendly and meets the needs of individuals with disabilities.
+            </p>
+        </section>
+    </body>
+</html>

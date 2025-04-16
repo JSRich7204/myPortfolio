@@ -588,3 +588,11 @@ section ul {
     border-radius: 8px;
     margin-top: 20px; /* Add some space above the iframe */
 }
+
+.video-player {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

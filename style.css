@@ -513,7 +513,7 @@ section ul {
     left: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 /* Navigation buttons */
@@ -595,4 +595,16 @@ section ul {
     height: auto;
     display: block;
     margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+.numbertext {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
 }
